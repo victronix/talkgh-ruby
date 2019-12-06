@@ -1,43 +1,69 @@
-# Talkgh
+# Talkgh SMS Client Library for Ruby
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/talkgh`. To experiment with that code, run `bin/console` for an interactive prompt.
+This is a Ruby client library for the Talkgh, you'll need to signup at [talkgh] to get started.
 
-TODO: Delete this and the text above, and describe your gem
 
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+
+## Requirements
+
+Talkgh ruby client library requires ruby version...
+
+```bash
+'>= 2.1.0'
+```
 ## Installation
 
-Add this line to your application's Gemfile:
+To install library using Rubygems:
 
-```ruby
-gem 'talkgh'
-```
+    gem install talkgh
 
-And then execute:
+Alternatively you can clone the repository:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install talkgh
+    git clone git@github.com/victronix/talkgh-ruby.git
 
 ## Usage
 
-TODO: Write usage instructions here
+Begin by requiring the talkgh library:
 
-## Development
+```ruby
+require 'talkgh'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+Then create a client object with your api token:
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+client = Talkgh::Client.new(api_token: 'YOUR-API-TOKEN')
+```
+
+### Send an SMS
+You can now use the client object to send an SMS.
+
+```ruby
+response = client.sms.send(
+    sender: 'SENDER-NAME',
+    des:    'NUMBER',
+    mess:   'Hello world'
+
+
+if response.code == '0000'
+  puts "Sent message successfully"
+else
+  puts "Error: #{response.code}"
+end
+```
+
 
 ## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/talkgh. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Please make sure to update tests as appropriate.
 
 ## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Talkgh project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/talkgh/blob/master/CODE_OF_CONDUCT.md).
+[talkgh]: https://talkgh.com
+[license]: LICENSE.txt
