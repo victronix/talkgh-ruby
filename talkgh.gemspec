@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors = ['Victor Atinyo']
   s.email = ['vxtechsln@gmail.com']
   s.homepage = 'https://github.com/victronix/talkgh-ruby'
-  s.description = 'Talkgh Client Library for Ruby. Visit https://github.com/victronix/talkgh-ruby'
+  s.description = 'Talkgh Client Library for Ruby. Documentation at https://github.com/victronix/talkgh-ruby'
   s.summary = 'This is the Ruby client library for Talkgh\'s API. To use it you\'ll need a Talkgh account. Sign up for free at https://www.talkgh.com'
   s.files = Dir.glob('lib/**/*.rb') + %w(LICENSE.txt README.md talkgh.gemspec)
   s.required_ruby_version = '>= 2.1.0'
