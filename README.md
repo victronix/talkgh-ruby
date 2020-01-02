@@ -47,7 +47,7 @@ response = client.sms.send(
     sender: 'SENDER-NAME',
     des:    'NUMBER',
     mess:   'Hello world'
-
+)
 
 if response.code == '0000'
   puts "Sent message successfully"
