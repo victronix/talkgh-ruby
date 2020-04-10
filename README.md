@@ -43,7 +43,7 @@ client = Talkgh::Client.new(api_token: 'YOUR-API-TOKEN')
 You can now use the client object to send an SMS.
 
 ```ruby
-
+// Encode text
 message = 'Hello world!'.encode(Encoding::ISO_8859_1)
 
 response = client.sms.send(
